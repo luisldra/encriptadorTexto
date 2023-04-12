@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-widt">
@@ -10,24 +11,71 @@
     <link rel="stylesheet" href="css/style.css">
 
     <script>
-        
+        function saltarLinea() {
+            document.write("<br>");
+            document.write("<br>");
+        };
 
+        function imprimir(msg) {
+            document.write(msg)
+            saltarLinea();
+        };
 
+        var msgEncriptado = "";
+        var msgDesEncriptado = "";
 
+        function encriptarTexto() {
 
+            var texto = document.querySelector("textarea");
 
+            for (let letra = 0; letra < texto.length; letra++) {
+                if (texto[letra] == "a") {
+                    msgEncriptado = msgEncriptado + "ai";
+                } else if (texto[letra] == "e") {
+                    msgEncriptado = msgEncriptado + "enter";
+                } else if (texto[letra] == "i") {
+                    msgEncriptado = msgEncriptado + "imes";
+                } else if (texto[letra] == "o") {
+                    msgEncriptado = msgEncriptado + "ober";
+                } else if (texto[letra] == "u") {
+                    msgEncriptado = msgEncriptado + "ufat";
+                } else {
+                    msgEncriptado = msgEncriptado + texto[letra];
+                }
+            }
+            console.log("mensaje encriptado: " + msgDesEncriptado)
+        }
 
-        var letra;
+        function desEncriptarTexto() {
+
+            for (let letra = 0; letra < texto.length; letra++) {
+
+                if (texto[letra] == "a") {
+                    msgDesEncriptado = msgDesEncriptado + "a";
+                    letra++;
+                } else if (texto[letra] == "e") {
+                    msgDesEncriptado = msgDesEncriptado + "e";
+                    letra = letra + 4;
+                } else if (texto[letra] == "i") {
+                    msgDesEncriptado = msgDesEncriptado + "i";
+                    letra = letra + 3;
+                } else if (texto[letra] == "o") {
+                    msgDesEncriptado = msgDesEncriptado + "o";
+                    letra = letra + 3;
+                } else if (texto[letra] == "u") {
+                    msgDesEncriptado = msgDesEncriptado + "u";
+                    letra = letra + 3;
+                } else {
+                    msgDesEncriptado = msgDesEncriptado + texto[letra];
+                }
+            }
+        }
+
+        var buttonEncriptar = document.getElementById("#bEncriptar");
+        buttonEncriptar.addEventListener('click',encriptarTexto);
 
     </script>
 
 </head>
 
-<body>
-
-    <header>
-
-    </header>
-    
-</body>
 </html>
