@@ -105,16 +105,12 @@ document.addEventListener('DOMContentLoaded', () => {
         function copiar() {
             areaTextoRespuesta.select();
             document.execCommand("copy");
-            alert('Texto copiado  ' +  areaTextoRespuesta.value)
-
         }
 
         navigator.clipboard.writeText(areaTextoRespuesta.value)
                     .then(function() {
-                        alert('Texto copiado al portapapeles: ' + areaTextoRespuesta.value);
                     })
                     .catch(function(err) {
-                        console.error('Error al copiar texto: ', err);
                     });
 
         copiar();

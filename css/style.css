@@ -1,17 +1,19 @@
 body{
-    width: 100%;
+    width: 1440px;
+    height: 1024px;
+    background-color: #F3F5FC;
 }
 
 main{
     margin: 0 auto;
     width: 1440px;
     height: 1024px;
+    background-color: none;
 }
 
 header{
     width: 100%;
     height: 100px;
-    padding: 20px;
     display: flex;
 }
 
@@ -30,16 +32,18 @@ header h1{
 
 .cuadroTexto{
     width: 100%;
+    height: 70%;
     display: block;
 }
 
 .areaTexto{
     width: 100%;  
-    height: 644px; 
+    height: 90%; 
     border: none;
     resize: none;
     font-size: 32px;
     color: #0A3871;
+    background-color: #F3F5FC;
 }
 
 .areaTexto::placeholder{
@@ -53,10 +57,12 @@ header h1{
 .mostrarmsg{
     position: relative;
     width: 30%;
-    height: 800px;
+    height: 90%;
     left: 900px;
     top: -40px;
     justify-items: center;
+    background-color: white;
+    border-radius: 32px;
 }
 
 .imagenMostrarmsg{
@@ -83,7 +89,7 @@ header h1{
 }
 
 #respuesta{
-    width: 100%;
+    width: 85%;
     height: 80%;
     font-size: 24px;
     color: #495057;
@@ -95,6 +101,7 @@ header h1{
     left: 0;
     resize: none;
     display: none;
+    border-color: white;
 }
 
 #copiarTexto{
