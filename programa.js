@@ -1,6 +1,18 @@
 var msgEncriptado = "";
 var msgDesEncriptado = "";
 
+function borrarContenido() {
+    var textarea = document.getElementById('texto');
+    var placeholderValue = textarea.getAttribute('placeholder');
+
+    var textareaRespuesta = document.getElementById('respuesta');
+
+    textarea.value = '';
+    textarea.setAttribute('placeholder', placeholderValue);
+
+    textareaRespuesta.value = '';
+}
+
 function encriptarTexto() {
 
     var texto = document.getElementById("texto").value;
@@ -20,9 +32,12 @@ function encriptarTexto() {
             msgEncriptado = msgEncriptado + texto[letra];
         }
     }
-    console.log("mensaje encriptado: " + msgEncriptado)
-    texto = "";
+
+    borrarContenido();
+    mostrarRespuesta(msgEncriptado);
+
     msgEncriptado = "";
+    texto = "";
 };
 
 function desEncriptarTexto() {
@@ -51,19 +66,57 @@ function desEncriptarTexto() {
         }
     }
 
-    console.log("mensaje Desencriptado: " + msgDesEncriptado)
-
+    borrarContenido();
+    mostrarRespuesta(msgDesEncriptado);
     texto = "";
     msgDesEncriptado = "";
+
 }
 
+function mostrarRespuesta(texto) {
+    document.getElementById('imagenMostrarmsg').style.display = 'none';
+    document.getElementById('respuesta').style.display = 'block';
+    document.getElementById('copiarTexto').style.display = 'block'
 
-document.addEventListener('DOMContentLoaded', () => {
-    const btnEncriptar = document.getElementById('bEncriptar');
-    btnEncriptar.addEventListener('click', encriptarTexto);
-});
+    document.getElementById('respuesta').value = texto;
+}
+
+function copiar() {
+    var copiar = document.getElementById('respuesta').value;
+    copiar.select();
+    document.execCommand("copy");
+
+    alert("copiado")
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     const btnDesEncriptar = document.getElementById('bDesencriptar');
     btnDesEncriptar.addEventListener('click', desEncriptarTexto);
+
+    const btnEncriptar = document.getElementById('bEncriptar');
+    btnEncriptar.addEventListener('click', encriptarTexto);
+
+    const btnCopiarTexto = document.getElementById('copiarTexto')
+    
+
+    const areaTextoRespuesta = document.getElementById('respuesta')
+    btnCopiarTexto.addEventListener("click", function(){
+
+        function copiar() {
+            areaTextoRespuesta.select();
+            document.execCommand("copy");
+            alert('Texto copiado  ' +  areaTextoRespuesta.value)
+
+        }
+
+        navigator.clipboard.writeText(areaTextoRespuesta.value)
+                    .then(function() {
+                        alert('Texto copiado al portapapeles: ' + areaTextoRespuesta.value);
+                    })
+                    .catch(function(err) {
+                        console.error('Error al copiar texto: ', err);
+                    });
+
+        copiar();
+    });
 });
