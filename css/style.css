@@ -156,7 +156,41 @@ button:hover{
 }
 
 footer{
-    width: 100%;
-    height: 10%;
+    height: 8%;
     background-color: #0A3871;
+}
+
+.nombre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    color: white;
+    font-size: 20px;
+}
+
+.iconos{
+    display: flex;
+    justify-content: center;
+}
+
+.iconos, .nombre{
+    padding: 10px 0 0 0;
+}
+
+.iconos a{
+
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	background-color:  #D8DFE8;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #0A3871;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
 }
