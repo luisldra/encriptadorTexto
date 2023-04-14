@@ -9,7 +9,6 @@ main{
     margin: 0 auto;
     width: 1440px;
     height: 80%;
-    background-color: none;
 }
 
 header{
@@ -60,10 +59,12 @@ header h1{
     width: 30%;
     height: 104%;
     left: 900px;
-    top: -40px;
+    top: -60px;
     justify-items: center;
     background-color: white;
     border-radius: 32px;
+
+    box-shadow: 0px 0px 18px 2px #B8CEE0;
 }
 
 .mostrarmsg p{
@@ -143,7 +144,8 @@ button{
 
 .botones label{
     display: block;
-    color: #0A3871;
+    color: #495057;
+    font-size: 12px;
 }
 
 .botones button{
