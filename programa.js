@@ -13,9 +13,22 @@ function borrarContenido() {
     textareaRespuesta.value = '';
 }
 
+function verificarTexto(texto){
+    texto = texto.toLowerCase();
+
+    texto = texto.replace(/[áéíóú]/g, function(match) {
+        return match === 'á' ? 'a' :
+               match === 'é' ? 'e' :
+               match === 'í' ? 'i' :
+               match === 'ó' ? 'o' :
+               match === 'ú' ? 'u' : match;
+    });
+    return texto;
+}
+
 function encriptarTexto() {
 
-    var texto = document.getElementById("texto").value;
+    var texto = verificarTexto(document.getElementById("texto").value);
 
     for (let letra = 0; letra < texto.length; letra++) {
         if (texto[letra] == "a") {
@@ -42,7 +55,7 @@ function encriptarTexto() {
 
 function desEncriptarTexto() {
 
-    var texto = document.getElementById("texto").value;
+    var texto = verificarTexto(document.getElementById("texto").value);
 
     for (let letra = 0; letra < texto.length; letra++) {
 

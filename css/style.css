@@ -1,13 +1,14 @@
 body{
-    width: 1440px;
+    width: 100%;
     height: 1024px;
     background-color: #F3F5FC;
+    margin: 0 auto;
 }
 
 main{
     margin: 0 auto;
     width: 1440px;
-    height: 1024px;
+    height: 80%;
     background-color: none;
 }
 
@@ -32,13 +33,13 @@ header h1{
 
 .cuadroTexto{
     width: 100%;
-    height: 70%;
+    height: 80%;
     display: block;
 }
 
 .areaTexto{
     width: 100%;  
-    height: 90%; 
+    height: 100%; 
     border: none;
     resize: none;
     font-size: 32px;
@@ -57,7 +58,7 @@ header h1{
 .mostrarmsg{
     position: relative;
     width: 30%;
-    height: 90%;
+    height: 104%;
     left: 900px;
     top: -40px;
     justify-items: center;
@@ -65,15 +66,21 @@ header h1{
     border-radius: 32px;
 }
 
+.mostrarmsg p{
+    box-sizing: border-box;
+    padding: 10px;
+}
+
 .imagenMostrarmsg{
     position: absolute;
     width: 100%;
-    height: 50%;
-    display: grid;
+    height: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
     justify-items: center;
-    margin: 180px 0;
+    flex-wrap: wrap;
+    align-content: center;
 }
 
 .tituloParrafo{
@@ -89,11 +96,12 @@ header h1{
 }
 
 #respuesta{
-    width: 85%;
+    box-sizing: border-box;
+    width: 100%;
     height: 80%;
     font-size: 24px;
     color: #495057;
-    padding: 32px;
+    padding: 26px;
     border-radius: 32px;
     border: none;
     position: absolute;
@@ -107,8 +115,8 @@ header h1{
 #copiarTexto{
     display: none;
     position: absolute;
-    top: 724px;
     left: 50px;
+    bottom: 40px;
 }
 
 button{
@@ -128,8 +136,9 @@ button{
 
 .botones{
     width: 100%;
+    height: 20px;
     float: left;
-    margin: 0 2% 0 8%;
+    padding: 5px;
 }
 
 .botones label{
@@ -156,26 +165,28 @@ button:hover{
 }
 
 footer{
-    height: 8%;
+    width: 100%;
+    height: 10%;
     background-color: #0A3871;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .nombre{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
     color: white;
     font-size: 20px;
+    box-sizing: border-box;
+    padding: 15px;
 }
 
 .iconos{
     display: flex;
     justify-content: center;
-}
-
-.iconos, .nombre{
-    padding: 10px 0 0 0;
 }
 
 .iconos a{
@@ -193,4 +204,72 @@ footer{
 	line-height: 35px;
 
 	margin-right: 3px;
+}
+
+@media screen and (max-width:1439px) {
+    main{
+        width: 100%;
+    }
+
+    .recibirmsg{
+        width: 100%;
+        height: 60%;
+        margin: 0;
+        box-sizing: border-box;
+        padding: 25px;
+
+    }
+
+    .botones{
+        text-align: center;
+        display: inline;
+    }
+
+    .botones button{
+        margin: 6px 24px 0 0;
+    }
+
+    .cuadroTexto{
+        height: 65%;
+    }
+
+    .mostrarmsg{
+        float: left;
+        position: static;
+        width: 100%;
+        height: 40%;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+
+    }
+
+    .imagenMostrarmsg{
+        position: static;
+        width: 100%;
+        height: 100%;
+        display: inline-grid;
+    }
+
+    .imagenMostrarmsg img{
+        display: none;
+    }
+
+    #respuesta{
+        position: static;
+        height: 77%;
+    }
+
+    #copiarTexto{
+        position: static;
+    }
+}
+
+@media screen and (max-width:384px){
+    button{
+        width: 80%;
+        height: 30px;
+        padding: 2px;
+    }
 }
